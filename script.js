@@ -20,13 +20,25 @@ function writePassword() {
   var password = generatePassword(length, lowerCase, upperCase, numbers, specialChars )
   var passwordText = document.querySelector("#password");
   passwordText.value = password; 
+  }
+  function generatePassword(length, lowerCase, upperCase, numbers, specialChars ) {
+    var characters ="";
+  if (lowerCase) {
+    characters += "abcdefghijklmnopqrstuvwxyz";
+  }
+  if (upperCase) {
+    characters += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  }
+  if (numbers) {
+    characters += "0123456789";
+  }
+  if (specialChars) {
+    characters += "!@#$%^&*()_+";
+  }
 
 
+  
 
-
-
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
