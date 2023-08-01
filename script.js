@@ -35,14 +35,12 @@ function writePassword() {
   if (specialChars) {
     characters += "!@#$%^&*()_+";
   }
-
-
-  
-
-
-  passwordText.value = password;
-
+  var password = "";
+  for (var i = 0; i < length; i++) {
+    var randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters.charAt(randomIndex);
+  }
+  return password;
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
