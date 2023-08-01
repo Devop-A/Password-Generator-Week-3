@@ -11,7 +11,15 @@ function writePassword() {
   var upperCase = confirm("Uppercase?");
   var numbers = confirm("Numbers?");
   var specialChars = confirm("Include special characters?");
-
+  if (length < 8 || length > 128) {alert("Invalid password, Enter proper length")
+  return;
+  }
+  if (!lowerCase && !upperCase && !numbers && !specialChars) {alert("Must select at least one option")
+  return;
+  }
+  var password = generatePassword(length, lowerCase, upperCase, numbers, specialChars )
+  var passwordText = document.querySelector("#password");
+  passwordText.value = password; 
 
 
 
